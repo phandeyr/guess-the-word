@@ -1,5 +1,6 @@
 import random
 import numpy
+from api import get_api_response
 
 # Boolean to determine if the word has been guessed
 word_guessed = False 
@@ -20,7 +21,7 @@ letter_dict = {}
 build_word = []
 
 def get_word():
-    word_list = ['friends', 'apple', 'money', 'crowded', 'squirrel', 'faucet', 'venomous', 'voyage', 'astonish', 'pancake']
+    word_list = get_api_response('https://random-word-api.herokuapp.com/word', {'number':10})
     return random.choice(word_list)
 
 def validate_input(input):

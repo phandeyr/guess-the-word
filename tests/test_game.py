@@ -37,5 +37,5 @@ class TestGame(unittest.TestCase):
         self.func.word_to_guess = 'apple'
         self.func.build_user_guessed_word()
         self.func.update_user_guesses('p')
-        self.assertEquals(self.func.user_guessed_word, [None, 'p', 'p', None, None])
+        self.assertEqual(self.func.user_guessed_word, [None, 'p', 'p', None, None])
         self.assertTrue('p' in self.func.letters_inputted)
